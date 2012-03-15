@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ ! -e "styrdokument" ]]; then
+if [ ! -e "styrdokument" ]; then
   git clone git://github.com/datasektionen/styrdokument.git
 fi
 
