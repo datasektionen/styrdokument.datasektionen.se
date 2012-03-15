@@ -8,7 +8,7 @@ class Styrdokument < Sinatra::Base
     textile :index, locals: {active_menu_link: ""}
   end
 
-  get /\/(stadgar|reglemente)/ do |document|
+  get /^\/(stadgar|reglemente)$/ do |document|
     textile document.to_sym, locals: {active_menu_link: document}
   end
 
