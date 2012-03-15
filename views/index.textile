@@ -1,0 +1,5 @@
+h1. Styrdokument
+
+På den här sidan finns en lite mer läsbar version av Konglig Datasektionens styrdokument.
+
+Styrdokumenten bor annars på "github.com/datasektionen/styrdokument":http://github.com/datasektionen/styrdokument.
