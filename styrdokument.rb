@@ -4,12 +4,21 @@ require 'RedCloth'
 class Styrdokument < Sinatra::Base
   set :textile, layout_engine: :erb
 
+  helpers do
+    def toc(page)
+      toc_page = page + ".toc"
+      textile toc_page.to_sym, layout: false
+    end
+
+    def page;end
+  end
+
   get "/" do
-    textile :index, locals: {active_menu_link: ""}
+    erb :index, locals: {page: ""}
   end
 
   get /^\/(stadgar|reglemente)$/ do |document|
-    textile document.to_sym, locals: {active_menu_link: document}
+    erb :document, locals: {page: document}
   end
 
   post "/update" do

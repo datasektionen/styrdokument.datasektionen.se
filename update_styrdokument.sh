@@ -12,5 +12,7 @@ fi
 
   ./textilize.rb stadgar.tex
   ./textilize.rb reglemente.tex
+  ./toc_gen.rb stadgar.textile
+  ./toc_gen.rb reglemente.textile
   cp *.textile ../views
 )
