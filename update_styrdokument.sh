@@ -8,11 +8,8 @@ fi
   cd styrdokument
   git pull
   make
+  make textile
+  make toc
   cp *.pdf ../public
-
-  ./textilize.rb stadgar.tex
-  ./textilize.rb reglemente.tex
-  ./toc_gen.rb stadgar.textile
-  ./toc_gen.rb reglemente.textile
   cp *.textile ../views
 )
