@@ -4,15 +4,6 @@ require 'RedCloth'
 class Styrdokument < Sinatra::Base
   set :textile, layout_engine: :erb
 
-  helpers do
-    def toc(page)
-      toc_page = page + ".toc"
-      textile toc_page.to_sym, layout: false
-    end
-
-    def page;end
-  end
-
   get "/" do
     erb :index, locals: {page: ""}
   end
