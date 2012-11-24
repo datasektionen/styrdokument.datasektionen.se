@@ -8,8 +8,8 @@ class Styrdokument < Sinatra::Base
     erb :index, locals: {page: ""}
   end
 
-  get /^\/(stadgar|reglemente)$/ do |document|
-    erb :document, locals: {page: document}
+  get /^\/(stadgar|reglemente|ekonomiskt_styrdokument|alkoholpolicy)$/ do |document|
+    textile document.to_sym
   end
 
   post "/update" do
