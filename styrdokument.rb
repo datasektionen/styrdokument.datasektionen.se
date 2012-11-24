@@ -9,7 +9,8 @@ class Styrdokument < Sinatra::Base
   end
 
   get /^\/(stadgar|reglemente|ekonomiskt_styrdokument|alkoholpolicy)$/ do |document|
-    textile document.to_sym
+    file = File.dirname(__FILE__) + "/views/#{document}.textile"
+    textile RedCloth.new(File.read(file))
   end
 
   post "/update" do
