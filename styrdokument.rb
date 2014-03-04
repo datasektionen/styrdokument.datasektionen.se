@@ -14,9 +14,8 @@ class Styrdokument < Sinatra::Base
   end
 
   post "/update" do
-    `/bin/sh update_styrdokument.sh`
-    status 200
-    body ""
+    `./update_styrdokument.sh`
+    status 204
   end
 
   get /\/(.*(?:js|css|pdf))/ do |asset|
