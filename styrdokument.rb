@@ -8,7 +8,7 @@ class Styrdokument < Sinatra::Base
     erb :index, locals: {page: ""}
   end
 
-  get /^\/(stadgar|reglemente|ekonomiskt_styrdokument|alkoholpolicy)$/ do |document|
+  get(/^\/(stadgar|reglemente|ekonomiskt_styrdokument|alkoholpolicy)$/) do |document|
     file = File.dirname(__FILE__) + "/views/#{document}.textile"
     textile RedCloth.new(File.read(file, encoding: 'utf-8'))
   end
@@ -18,7 +18,7 @@ class Styrdokument < Sinatra::Base
     status 204
   end
 
-  get /\/(.*(?:js|css|pdf))/ do |asset|
+  get(/\/(.*(?:js|css|pdf))/) do |asset|
     send_file "public/#{asset}"
   end
 end
