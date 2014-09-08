@@ -10,7 +10,7 @@ class Styrdokument < Sinatra::Base
 
   get /^\/(stadgar|reglemente|ekonomiskt_styrdokument|alkoholpolicy)$/ do |document|
     file = File.dirname(__FILE__) + "/views/#{document}.textile"
-    textile RedCloth.new(File.read(file, "r:utf-8"))
+    textile RedCloth.new(File.read(file, encoding: 'utf-8'))
   end
 
   post "/update" do
