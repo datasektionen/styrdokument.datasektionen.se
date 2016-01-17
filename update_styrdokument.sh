@@ -5,6 +5,8 @@ if [ ! -e "styrdokument" ]; then
   git clone git://github.com/datasektionen/styrdokument.git
 fi
 
+tlmgr install titlesec lastpage
+
 (
   cd styrdokument
   git fetch origin master
@@ -13,7 +15,7 @@ fi
   cp *.pdf ../public
   cp *.textile ../views
 
-  for file in `ls +(!(*toc*)textile)|sed -e 's/.textile//'`; do 
+  for file in `ls +(!(*toc*)textile)|sed -e 's/.textile//'`; do
     document="../views/$file.textile";
     echo '<div class="pull-right toc">' > $document;
     echo '' >> $document;
