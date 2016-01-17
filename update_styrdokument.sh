@@ -7,10 +7,9 @@ fi
 
 (
   cd styrdokument
-  git pull
-  make
-  make textile
-  make toc
+  git fetch origin master
+  git reset --hard origin/master
+  make clean pdf textile toc
   cp *.pdf ../public
   cp *.textile ../views
 

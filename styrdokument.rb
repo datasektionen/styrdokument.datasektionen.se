@@ -22,4 +22,3 @@ class Styrdokument < Sinatra::Base
     send_file "public/#{asset}"
   end
 end
-
